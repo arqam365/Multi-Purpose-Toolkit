@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt"
+            android:layout_marginTop="30dp">
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:background="#0003DAC5"
+                android:layout_marginTop="20dp"
+                android:onClick="calc"
+                app:srcCompat="@drawable/ic_baseline_calculate_24" />
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:background="#0003DAC5"
+                android:layout_marginTop="20dp"
+                android:onClick="flashlight"
+                app:srcCompat="@drawable/ic_baseline_flashlight_on_24" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1pt"
+            android:layout_marginTop="30dp">
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:background="#0003DAC5"
+                android:layout_marginTop="20dp"
+                android:onClick="compass"
+                app:srcCompat="@drawable/ic_baseline_compass_calibration_24" />
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:background="#0003DAC5"
+                android:layout_marginTop="20dp"
+                android:onClick="mp3"
+                app:srcCompat="@drawable/ic_baseline_library_music_24" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
