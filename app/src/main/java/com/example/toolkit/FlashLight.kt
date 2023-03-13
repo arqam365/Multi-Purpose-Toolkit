@@ -1,4 +1,4 @@
-package com.nextlevelprogrammers.toolkit
+package com.example.toolkit
 
 import android.content.Context
 import android.hardware.camera2.CameraManager

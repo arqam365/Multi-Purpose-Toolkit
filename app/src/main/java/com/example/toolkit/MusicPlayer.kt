@@ -1,4 +1,4 @@
-package com.nextlevelprogrammers.toolkit
+package com.example.toolkit
 
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
