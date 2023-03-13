@@ -19,14 +19,13 @@ class MusicPlayer : AppCompatActivity() {
         setContentView(R.layout.activity_music_player)
 
         val mediaplayer = MediaPlayer.create(this,R.raw.music)
-        val mediaplayer1 = MediaPlayer.create(this,R.raw.music2)
 
         val seekbar = findViewById<SeekBar>(R.id.seekbar)
         seekbar.progress = 0
 
         seekbar.max = mediaplayer.duration
 
-        var play_btn = findViewById<ImageButton>(R.id.play_btn)
+        val play_btn = findViewById<ImageButton>(R.id.play_btn)
         play_btn.setOnClickListener {
             if (!mediaplayer.isPlaying){
                 mediaplayer.start()
@@ -34,13 +33,6 @@ class MusicPlayer : AppCompatActivity() {
             }else{
                 mediaplayer.pause()
                 play_btn.setImageResource(R.drawable.ic_baseline_play_arrow_24)
-            }
-        }
-        var next_btn = findViewById<ImageButton>(R.id.next)
-        next_btn.setOnClickListener {
-            if (!mediaplayer1.isPlaying){
-                mediaplayer1.start()
-                play_btn.setImageResource(R.drawable.ic_baseline_pause_24)
             }
         }
         seekbar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
