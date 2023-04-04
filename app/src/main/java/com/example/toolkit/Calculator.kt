@@ -1,10 +1,15 @@
 package com.nextlevelprogrammers.toolkit
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+
 
 class Calculator : AppCompatActivity() {
 
@@ -18,6 +23,16 @@ class Calculator : AppCompatActivity() {
     }
 
     fun numberEvent(view: View) {
+        val v = (getSystemService(Context.VIBRATOR_SERVICE) as Vibrator)
+        // Vibrate for 500 milliseconds
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(50,
+                VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else {
+            v.vibrate(50)
+        }
         val editText = findViewById<EditText>(R.id.editText)
         val bu1 = findViewById<Button>(R.id.bu1)
         val bu2 = findViewById<Button>(R.id.bu2)
@@ -54,6 +69,16 @@ class Calculator : AppCompatActivity() {
     }
 
     fun operatorEvent(view: View) {
+        val v = (getSystemService(Context.VIBRATOR_SERVICE) as Vibrator)
+        // Vibrate for 500 milliseconds
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(50,
+                VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else {
+            v.vibrate(50)
+        }
         val editText = findViewById<EditText>(R.id.editText)
         val buPlus = findViewById<Button>(R.id.buPlus)
         val buMinus = findViewById<Button>(R.id.buMinus)
@@ -71,6 +96,16 @@ class Calculator : AppCompatActivity() {
     }
 
     fun equalEvent(view: View) {
+        val v = (getSystemService(Context.VIBRATOR_SERVICE) as Vibrator)
+        // Vibrate for 500 milliseconds
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(50,
+                VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else {
+            v.vibrate(50)
+        }
         val editText = findViewById<EditText>(R.id.editText)
         var newnumber = editText.text.toString()
         var result = 0.0
@@ -84,15 +119,42 @@ class Calculator : AppCompatActivity() {
     }
 
     fun acEvent(view: View) {
+        val v = (getSystemService(Context.VIBRATOR_SERVICE) as Vibrator)
+        // Vibrate for 500 milliseconds
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(50,
+                VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else {
+            v.vibrate(50)
+        }
         val editText = findViewById<EditText>(R.id.editText)
         editText.setText("0")
         isNewOp = true
     }
 
     fun percentEvent(view: View) {
+        val v = (getSystemService(Context.VIBRATOR_SERVICE) as Vibrator)
+        // Vibrate for 500 milliseconds
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(50,
+                VibrationEffect.DEFAULT_AMPLITUDE))
+        }
+        else {
+            v.vibrate(50)
+        }
         val editText = findViewById<EditText>(R.id.editText)
         var no = editText.text.toString().toDouble()/100
         editText.setText(no.toString())
         isNewOp = true
+    }
+
+    fun delete(view: View) {
+        val editText = findViewById<EditText>(R.id.editText)
+        var word = editText.text.toString()
+        if (word.isNotEmpty()) {
+            editText.setText(word.substring(0, word.length - 1)) }
     }
 }
