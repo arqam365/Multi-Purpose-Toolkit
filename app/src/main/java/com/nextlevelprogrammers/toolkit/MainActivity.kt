@@ -3,7 +3,6 @@ package com.nextlevelprogrammers.toolkit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,21 +10,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun calc(view: View) {
+    fun calc() {
         val intent = Intent(this,Calculator::class.java)
         startActivity(intent)
     }
 
-    fun flashlight(view: View) {
+    fun flashlight() {
         val intent = Intent(this,FlashLight::class.java)
         startActivity(intent)
     }
 
-    fun compass(view: View) {
+    fun compass() {
         val intent = Intent(this,Compass::class.java)
         startActivity(intent)
     }
-    fun mp3(view: View) {
+    fun mp3() {
         val intent = Intent(this,MusicPlayer::class.java)
         startActivity(intent)
     }
